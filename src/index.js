@@ -7,9 +7,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 /*app.get("/", (req, res) => {
-  res.send("OKKK");
+  res.send("OK");
 });
 */
-require("./controllers/authControllerUser")(app);
-
+require("./controllers/authControllerQuest")(app);
 app.listen(3000);

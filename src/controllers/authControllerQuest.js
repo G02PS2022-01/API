@@ -4,7 +4,7 @@ const Quest = require("../models/Quest");
 
 const router = express.Router();
 
-router.post("/register", async (req, res) => {
+router.post("/question", async (req, res) => {
   try {
     const quest = await Quest.create(req.body);
 
@@ -14,4 +14,4 @@ router.post("/register", async (req, res) => {
   }
 });
 
-module.exports = (app) => app.use("/auth", router);
+module.exports = (app) => app.use("/authControllerQuest", router);
