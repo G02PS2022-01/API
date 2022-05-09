@@ -14,4 +14,4 @@ router.post("/question", async (req, res) => {
   }
 });
 
-module.exports = (app) => app.use("/authControllerQuest", router);
+module.exports = (app) => app.use("/auth", router);
