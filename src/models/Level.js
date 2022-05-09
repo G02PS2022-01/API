@@ -15,6 +15,11 @@ const LevelSchema = new mongoose.Schema({
     require: true,
    
   },
+
+  created_at: {
+    type: Date,
+    default: Date.now(),
+  },
   
 });
 
