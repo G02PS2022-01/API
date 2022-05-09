@@ -10,6 +10,5 @@ app.use(bodyParser.urlencoded({ extended: false }));
   res.send("OK");
 });
 */
-require("./controllers/authControllerUser")(app);
-
+require("./controllers/authControllerQuest")(app);
 app.listen(3000);
