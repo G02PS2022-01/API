@@ -20,4 +20,4 @@ router.post("/register", async (req, res) => {
   }
 });
 
-module.exports = (app) => app.use("/authControllerUser", router);
+module.exports = (app) => app.use("/auth", router);
