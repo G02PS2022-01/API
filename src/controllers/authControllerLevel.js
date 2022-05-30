@@ -7,8 +7,7 @@ const router = express.Router();
 router.post("/level", async (req, res) => {
   try {
     if (await Level.findOne({ level }))
-    return res.status(400).send({ erro:'User already exists' });
-
+      return res.status(400).send({ erro: "Level exists" });
 
     const level = await Level.create(req.body);
 
@@ -17,7 +16,5 @@ router.post("/level", async (req, res) => {
     return res.status(400).send({ error: "Registrain failed" });
   }
 });
-
-
 
 module.exports = (app) => app.use("/auth", router);
