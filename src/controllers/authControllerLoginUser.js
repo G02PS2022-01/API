@@ -4,7 +4,7 @@ const User = require("../models/User");
 
 const router = express.Router();
 
-router.get("/auth-login-user", async(req, res) => {
+router.get("/loginUser", async(req, res) => {
 
     const { email, password } = req.body;
 
@@ -13,12 +13,11 @@ router.get("/auth-login-user", async(req, res) => {
     if(!user)
         return res.status(400).send({ error: 'User not found' });
 
-    if(!await bcrypt.compare(password, user.password))
+    if(!await bcrypt.compare(password, user.password)){
         return res.status(400).send({ error: 'Invalid password' })
-
-    user.password = undefined
-
-    res.send({ user })
+    }else{
+        return res.status(200)
+    }
 
 });
 
