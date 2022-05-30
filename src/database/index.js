@@ -1,9 +1,10 @@
 const mongoose = require("mongoose");
+const connectDB = require("../config/connectDB");
 
 //colocar isso em lugar seguro
-const username = encodeURIComponent("amauri_1");
-const password = encodeURIComponent("adm12345");
-const cluster = "dogcode.aqwiq.mongodb.net";
+const username = encodeURIComponent(connectDB.username);
+const password = encodeURIComponent(connectDB.password);
+const cluster = connectDB.cluster;
 //const authCluster = "Dog-test?retryWrites=true";
 //const autMechanism = "w=majority";
 
