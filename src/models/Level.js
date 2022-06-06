@@ -2,7 +2,7 @@ const mongoose = require("../database");
 
 const LevelSchema = new mongoose.Schema({
   Level: {
-    type: int,
+    type: String,
     unique: true,
     require: true,
   },

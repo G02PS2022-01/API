@@ -1,6 +1,6 @@
-const express = require("express");
+/* const express = require("express");
 
-const Content = require("../models/TotalContent");
+const Content = require("../models/CT");
 
 const router = express.Router();
 
@@ -18,3 +18,4 @@ router.post("/content", async (req, res) => {
 });
 
 module.exports = (app) => app.content("/auth", router);
+*/
