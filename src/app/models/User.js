@@ -17,6 +17,18 @@ const UserSchema = new mongoose.Schema({
     require: true,
     select: false,
   },
+
+  level: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Level",
+    },
+  ],
+  completedLevel: [
+    {
+      type: String,
+    },
+  ],
   passwordResetToken: {
     type: String,
     select: false,

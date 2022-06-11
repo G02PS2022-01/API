@@ -10,7 +10,7 @@ const QuestSchema = new mongoose.Schema({
     require: true,
     lowercase: true,
   },
-  answer: {
+  answers: {
     type: String,
     require: true,
     lowercase: true,
