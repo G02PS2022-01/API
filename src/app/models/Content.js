@@ -6,7 +6,14 @@ const ContentSchema = new mongoose.Schema({
     unique: true,
     require: true,
   },
-  quest: [],
+
+  quest: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Quest",
+    },
+  ],
+
   created_at: {
     type: Date,
     default: Date.now(),

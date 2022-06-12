@@ -8,16 +8,19 @@ const QuestSchema = new mongoose.Schema({
   question: {
     type: String,
     require: true,
-    lowercase: true,
   },
   answers: {
     type: String,
     require: true,
-    lowercase: true,
   },
   created_at: {
     type: Date,
     default: Date.now(),
+  },
+  completed: {
+    type: Boolean,
+    required: true,
+    default: false,
   },
 });
 

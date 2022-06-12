@@ -24,9 +24,10 @@ const UserSchema = new mongoose.Schema({
       ref: "Level",
     },
   ],
-  completedLevel: [
+  levelPermission: [
     {
       type: String,
+      select: false,
     },
   ],
   passwordResetToken: {

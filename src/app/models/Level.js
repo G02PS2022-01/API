@@ -6,19 +6,23 @@ const LevelSchema = new mongoose.Schema({
     unique: true,
     require: true,
   },
-  content: [
-    {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Content",
-      required: true,
-    },
-  ],
+  content: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Content",
+    required: true,
+  },
+
   user: [
     {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
     },
   ],
+  conclude: {
+    type: Boolean,
+    required: true,
+    default: false,
+  },
   created_at: {
     type: Date,
     default: Date.now(),
