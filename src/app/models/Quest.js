@@ -1,8 +1,13 @@
 const mongoose = require("../../database");
 
 const QuestSchema = new mongoose.Schema({
-  intro_content: {
+  introduction: {
     type: String,
+    require: true,
+  },
+  level: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Level",
     require: true,
   },
   question: {
@@ -13,14 +18,14 @@ const QuestSchema = new mongoose.Schema({
     type: String,
     require: true,
   },
+  flag: {
+    type: Boolean,
+    require: true,
+    default: false,
+  },
   created_at: {
     type: Date,
     default: Date.now(),
-  },
-  completed: {
-    type: Boolean,
-    required: true,
-    default: false,
   },
 });
 

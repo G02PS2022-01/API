@@ -7,22 +7,23 @@ const LevelSchema = new mongoose.Schema({
     require: true,
   },
   content: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Content",
+    type: String,
+    unique: true,
     required: true,
   },
-
-  user: [
+  quests: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Quest",
+      required: true,
+    },
+  ],
+  adm: [
     {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
     },
   ],
-  conclude: {
-    type: Boolean,
-    required: true,
-    default: false,
-  },
   created_at: {
     type: Date,
     default: Date.now(),
