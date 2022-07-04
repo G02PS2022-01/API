@@ -1,19 +1,27 @@
 const mongoose = require("../../database");
 
 const QuestSchema = new mongoose.Schema({
-  intro_content: {
+  introduction: {
     type: String,
+    require: true,
+  },
+  level: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Level",
     require: true,
   },
   question: {
     type: String,
     require: true,
-    lowercase: true,
   },
-  answer: {
+  answers: {
     type: String,
     require: true,
-    lowercase: true,
+  },
+  flag: {
+    type: Boolean,
+    require: true,
+    default: false,
   },
   created_at: {
     type: Date,

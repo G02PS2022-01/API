@@ -1,20 +1,29 @@
 const mongoose = require("../../database");
 
 const LevelSchema = new mongoose.Schema({
-  Level: {
+  nameLevel: {
     type: String,
     unique: true,
     require: true,
   },
-  quest: {
-    type: String,
-    require: true,
-  },
   content: {
     type: String,
-    require: true,
+    unique: true,
+    required: true,
   },
-
+  quests: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Quest",
+      required: true,
+    },
+  ],
+  adm: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+    },
+  ],
   created_at: {
     type: Date,
     default: Date.now(),

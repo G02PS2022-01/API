@@ -17,6 +17,19 @@ const UserSchema = new mongoose.Schema({
     require: true,
     select: false,
   },
+
+  level: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Level",
+    },
+  ],
+  levelPermission: [
+    {
+      type: String,
+      select: false,
+    },
+  ],
   passwordResetToken: {
     type: String,
     select: false,
